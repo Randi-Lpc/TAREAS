@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #e5e7eb;
+    padding: 2rem 1rem;
+}
+
+.caja {
+    max-width: 650px;
+    margin: 0 auto;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #3b82f6;
+    padding-left: 0.75rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #334155;
+    margin: 1.5rem 0 0.75rem 0;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    padding: 0.6rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+.botones {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.secundario {
+    background: #64748b;
+    flex: 1;
+}
+
+.secundario:hover {
+    background: #475569;
+}
+
+ul {
+    list-style: none;
+}
+
+.elemento-tarea {
+    background: #f8fafc;
+    padding: 0.75rem;
+    border-left: 3px solid #3b82f6;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.elemento-tarea div {
+    flex: 1;
+}
+
+.elemento-tarea h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+}
+
+.elemento-tarea p {
+    font-size: 0.85rem;
+    color: #475569;
+    margin-bottom: 0.25rem;
+}
+
+.elemento-tarea small {
+    font-size: 0.7rem;
+    color: #94a3b8;
+}
+
+.btn-eliminar {
+    background: #ef4444;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+}
+
+.btn-eliminar:hover {
+    background: #dc2626;
+}
+
+@media (max-width: 500px) {
+    .caja {
+        padding: 1rem;
+    }
+    
+    .elemento-tarea {
+        flex-direction: column;
+    }
+    
+    .btn-eliminar {
+        align-self: flex-end;
+    }
+}
