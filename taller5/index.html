@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiantes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1> Registro de Estudiantes</h1>
+
+    <!-- FORMULARIO -->
+    <form id="formEstudiante" novalidate>
+        <div class="form-grid">
+            <!-- Cédula -->
+            <div class="campo">
+                <label for="cedula">Cédula *</label>
+                <input type="text" id="cedula" placeholder="Ej: 1234567890" maxlength="10">
+                <span class="mensaje-error" id="cedulaError"></span>
+            </div>
+            <!-- Apellidos -->
+            <div class="campo">
+                <label for="apellidos">Apellidos *</label>
+                <input type="text" id="apellidos" placeholder="Pérez García">
+                <span class="mensaje-error" id="apellidosError"></span>
+            </div>
+            <!-- Nombres -->
+            <div class="campo">
+                <label for="nombres">Nombres *</label>
+                <input type="text" id="nombres" placeholder="María José">
+                <span class="mensaje-error" id="nombresError"></span>
+            </div>
+            <!-- Dirección -->
+            <div class="campo">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" placeholder="Calle 123, Quito">
+                <span class="mensaje-error" id="direccionError"></span>
+            </div>
+            <!-- Teléfono -->
+            <div class="campo">
+                <label for="telefono">Teléfono *</label>
+                <input type="text" id="telefono" placeholder="0987654321" maxlength="10">
+                <span class="mensaje-error" id="telefonoError"></span>
+            </div>
+            <!-- Correo -->
+            <div class="campo">
+                <label for="correo">Correo electrónico *</label>
+                <input type="email" id="correo" placeholder="ejemplo@dominio.com">
+                <span class="mensaje-error" id="correoError"></span>
+            </div>
+            <!-- Facultad (select) -->
+            <div class="campo">
+                <label for="facultad">Facultad *</label>
+                <select id="facultad">
+                    <option value="">Seleccionar</option>
+                    <option value="Ingeniería">Ingeniería</option>
+                    <option value="Ciencias Sociales">Ciencias Sociales</option>
+                    <option value="Medicina">Medicina</option>
+                    <option value="Artes">Artes</option>
+                    <option value="Economía">Economía</option>
+                </select>
+                <span class="mensaje-error" id="facultadError"></span>
+            </div>
+            <!-- Nivel (select) -->
+            <div class="campo">
+                <label for="nivel">Nivel *</label>
+                <select id="nivel">
+                    <option value="">Seleccionar</option>
+                    <option value="1ro">1ro</option>
+                    <option value="2do">2do</option>
+                    <option value="3ro">3ro</option>
+                    <option value="4to">4to</option>
+                    <option value="5to">5to</option>
+                    <option value="6to">6to</option>
+                    <option value="7mo">7mo</option>
+                    <option value="8vo">8vo</option>
+                    <option value="9no">9no</option>
+                    <option value="10mo">10mo</option>
+                </select>
+                <span class="mensaje-error" id="nivelError"></span>
+            </div>
+            <!-- Paralelo (select) -->
+            <div class="campo">
+                <label for="paralelo">Paralelo *</label>
+                <select id="paralelo">
+                    <option value="">Seleccionar</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+                <span class="mensaje-error" id="paraleloError"></span>
+            </div>
+
+            <!-- Botones -->
+            <div class="acciones">
+                <button type="submit" class="btn btn-primary" id="btnGuardar"> Guardar estudiante</button>
+                <button type="button" class="btn btn-outline" id="btnLimpiar"> Limpiar campos</button>
+                <button type="button" class="btn btn-danger" id="btnEliminarTodos"> Eliminar todos</button>
+            </div>
+        </div>
+    </form>
+
+    <hr>
+
+    <!-- LISTADO DE ESTUDIANTES -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <h2 style="font-weight: 400; font-size: 20px; color: #1e293b;"> Estudiantes registrados</h2>
+        <span class="contador" id="contadorEstudiantes">0 registros</span>
+    </div>
+    <div class="tabla-estudiantes">
+        <table>
+            <thead>
+                <tr>
+                    <th>Cédula</th>
+                    <th>Apellidos</th>
+                    <th>Nombres</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Facultad</th>
+                    <th>Nivel</th>
+                    <th>Paralelo</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+                <!-- filas dinámicas -->
+            </tbody>
+        </table>
+        <div id="mensajeVacio" class="sin-registros">No hay estudiantes registrados.</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
